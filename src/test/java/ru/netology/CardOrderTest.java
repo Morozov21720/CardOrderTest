@@ -33,11 +33,11 @@ public class CardOrderTest {
     @Test
     void shouldSubmitFormSuccessfully() {
         // Ввод имени
-        WebElement nameField = driver.findElement(By.cssSelector("[data-test-id='name'] input"));
+        WebElement nameField = driver.findElement(By.cssSelector("input.input__control[type='text'][name='name']"));
         nameField.sendKeys("Иван Петров-Сидоров");
 
         // Ввод телефона
-        WebElement phoneField = driver.findElement(By.cssSelector("[data-test-id='phone'] input"));
+        WebElement phoneField = driver.findElement(By.cssSelector("input.input__control[type='tel'][name='phone']"));
         phoneField.sendKeys("+79876543210");
 
         // Установка флажка согласия
@@ -45,7 +45,7 @@ public class CardOrderTest {
         agreementCheckbox.click();
 
         // Отправка формы
-        WebElement submitButton = driver.findElement(By.cssSelector("[data-test-id='button']"));
+        WebElement submitButton = driver.findElement(By.cssSelector("[type='button']"));
         submitButton.click();
 
         // Проверка успешного сообщения
